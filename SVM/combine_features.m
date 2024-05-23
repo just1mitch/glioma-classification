@@ -5,6 +5,9 @@ function combine_features(filelist, output)
 
     for file = 2:length(filelist)
         tbl = readtable(filelist{file});
+        if strcmp(filelist{file}, ".\Features\conventional_features.csv")
+            tbl = tbl(:,2:end);
+        end
         combined = [combined, tbl];
     end
     writetable(combined, output)

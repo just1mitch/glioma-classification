@@ -1,12 +1,12 @@
 % Train and test a linear SVM
 TESTSIZE = 10;
-ITERATIONS = 100;
+ITERATIONS = 1000;
 DATAFILE = "combined_features.csv";
 
 % Combine data in one csv (only needed once to create data)
 % name_mapping_path = "path_to_name_mapping.csv";
 % create_classifications(name_mapping_path);
-% filelist = {"classifications.csv", ".\Features\shapeFeatures.csv", ".\Features\textureFeatures.csv", ".\Features\intensityFeatures.csv"};
+% filelist = {".\Features\classifications.csv", ".\Features\conventional_features.csv", ".\Features\shapeFeatures.csv", ".\Features\textureFeatures.csv", ".\Features\intensityFeatures.csv"};
 % combine_features(filelist, DATAFILE)
 
 data = readtable(DATAFILE);
