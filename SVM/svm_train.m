@@ -1,6 +1,6 @@
 % Train and test a linear SVM
 TESTSIZE = 10;
-ITERATIONS = 1000;
+ITERATIONS = 100;
 DATAFILE = "combined_features.csv";
 
 % Combine data in one csv (only needed once to create data)
@@ -60,7 +60,7 @@ end
 avgaccuracy = avgaccuracy / ITERATIONS;
 
 % Check test data with best generated classifier
-[yfit, scores] = bestclassifier.predictFcn(testsample);
+[yfit, ~] = bestclassifier.predictFcn(testsample);
 answers = [repmat({'HGG'}, TESTSIZE, 1); repmat({'LGG'}, TESTSIZE, 1)];
 results = strcmp(yfit, answers); % 1 for correct, 0 for false
 results_accuracy = sum(results) / (TESTSIZE*2);
